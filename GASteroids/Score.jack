@@ -32,6 +32,8 @@ class Score {
     static int score;
     static int prevScore;
 
+    static int highScore;
+
     function void init (int numLives) {
         let prevLives = -1;
         let lives = numLives;
@@ -51,7 +53,16 @@ class Score {
     function void changeScore (int dScore) {
         let prevScore = score;
         let score = score + dScore;
+
+        //Updating the high score if the new score is high 
+        if(score>highScore){
+            let highScore = score;
+        }
         return;
+    }
+
+    function int getHighScore(){
+        return highScore;
     }
 
     function int lifeChanged() {
