@@ -55,6 +55,8 @@ class GASteroids {
     field int logo_height;
     field Array logo;
 
+    field int highScore;
+    static int prevhigh;
     field String blankSpace;
 
     /**
@@ -174,7 +176,7 @@ class GASteroids {
 
         // Setup stand in lives, score, speed area.
         do Screen.setColor(false);
-        do Screen.drawRectangle(0, 40, 64, 144);
+        do Screen.drawRectangle(0, 40, 64, 168);
 
         do Output.moveCursor(4, 0);
         do Output.printString("Lives");
@@ -184,6 +186,9 @@ class GASteroids {
 
         do Output.moveCursor(10, 0);
         do Output.printString("Speed");
+
+        do Output.moveCursor(13,0);
+        do Output.printString("Record");
 
         let blankSpace = "       ";
 
@@ -274,6 +279,7 @@ class GASteroids {
 	 */
 	method void gameTick(int key) {
 	    var int i;
+        var int j;
 	    var Asteroid a;
 
 	    // User input on ship.
@@ -359,6 +365,15 @@ class GASteroids {
 	        do Output.printInt(gameSpeed);
 	        let gameSpeedPrev = gameSpeed;
 	    }
+
+        //Print High Score
+        let j = Score.getHighScore();
+        if(i<j){
+            do Output.moveCursor(14,0);
+            do Output.printString(blankSpace);
+            do Output.moveCursor(14,0);
+            do Output.printInt(j);
+        } 
 
 	    do Sys.wait(gameSpeed);
 	    //do Sys.wait(500);     // Debug speed
