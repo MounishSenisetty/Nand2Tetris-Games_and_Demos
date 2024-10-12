@@ -27,7 +27,19 @@ push static 2
 push argument 0
 add
 pop static 2
+push static 2
+push static 4
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push static 2
+pop static 4
+label IF_FALSE0
 push constant 0
+return
+function Score.getHighScore 0
+push static 4
 return
 function Score.lifeChanged 0
 push static 0
