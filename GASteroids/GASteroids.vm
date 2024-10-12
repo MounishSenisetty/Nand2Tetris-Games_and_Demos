@@ -1,5 +1,5 @@
 function GASteroids.new 3
-push constant 9
+push constant 10
 call Memory.alloc 1
 pop pointer 0
 push constant 15
@@ -730,7 +730,7 @@ pop temp 0
 push constant 0
 push constant 40
 push constant 64
-push constant 144
+push constant 168
 call Screen.drawRectangle 4
 pop temp 0
 push constant 4
@@ -787,6 +787,26 @@ push constant 100
 call String.appendChar 2
 call Output.printString 1
 pop temp 0
+push constant 13
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+push constant 6
+call String.new 1
+push constant 82
+call String.appendChar 2
+push constant 101
+call String.appendChar 2
+push constant 99
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 114
+call String.appendChar 2
+push constant 100
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
 push constant 7
 call String.new 1
 push constant 32
@@ -803,7 +823,7 @@ push constant 32
 call String.appendChar 2
 push constant 32
 call String.appendChar 2
-pop this 8
+pop this 9
 call Ship.new 0
 pop this 2
 push constant 5
@@ -959,7 +979,7 @@ goto WHILE_EXP0
 label WHILE_END0
 push constant 0
 return
-function GASteroids.gameTick 2
+function GASteroids.gameTick 3
 push argument 0
 pop pointer 0
 push argument 1
@@ -1062,8 +1082,8 @@ push this 4
 add
 pop pointer 1
 push that 0
-pop local 1
-push local 1
+pop local 2
+push local 2
 call Asteroid.tick 1
 pop temp 0
 push local 0
@@ -1090,8 +1110,8 @@ push this 4
 add
 pop pointer 1
 push that 0
-pop local 1
-push local 1
+pop local 2
+push local 2
 call Asteroid.redraw 1
 pop temp 0
 push local 0
@@ -1117,7 +1137,7 @@ push constant 5
 push constant 0
 call Output.moveCursor 2
 pop temp 0
-push this 8
+push this 9
 call Output.printString 1
 pop temp 0
 push constant 5
@@ -1152,7 +1172,7 @@ push constant 8
 push constant 0
 call Output.moveCursor 2
 pop temp 0
-push this 8
+push this 9
 call Output.printString 1
 pop temp 0
 push constant 8
@@ -1174,7 +1194,7 @@ push constant 11
 push constant 0
 call Output.moveCursor 2
 pop temp 0
-push this 8
+push this 9
 call Output.printString 1
 pop temp 0
 push constant 11
@@ -1187,6 +1207,29 @@ pop temp 0
 push this 0
 pop this 1
 label IF_FALSE11
+call Score.getHighScore 0
+pop local 1
+push local 0
+push local 1
+lt
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push constant 14
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+push this 9
+call Output.printString 1
+pop temp 0
+push constant 14
+push constant 0
+call Output.moveCursor 2
+pop temp 0
+push local 1
+call Output.printInt 1
+pop temp 0
+label IF_FALSE12
 push this 0
 call Sys.wait 1
 pop temp 0
