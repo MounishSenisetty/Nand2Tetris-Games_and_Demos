@@ -131,15 +131,14 @@ Commodore 64 for this one.
 
 [![YouTube Video: GASteroids Gameplay](https://s.ytimg.com/yts/img/favicon_48-vfl1s0rGh.png)<br>Watch GASteroids Gameplay on YouTube](http://www.youtube.com/watch?v=f5znnQonaso)
 
-The player controls a spaceship in an asteroid field. The goal is to
-destroy asteroids and survive as long as possible.
+The player controls a spaceship in an asteroid field. 
+The goal is to destroy asteroids and survive as long as possible.
 
-The player can rotate the ship left and right, thrust forward, and fire
-weapons to destroy asteroids. Large asteroids split into smaller asteroids
-when hit. Small asteroids disappear when hit.
+The player can rotate the ship left and right, thrust forward, and fire weapons to destroy asteroids.
+Large asteroids split into smaller asteroids when hit. Small asteroids disappear when hit.
 
-Colliding with an asteroid will destroy the player's ship. A new ship will
-be granted after each death.
+Colliding with an asteroid will destroy the player's ship. A new ship will be granted after each death.
+The game now includes a high score feature, recording and displaying the player's best score.
 
 Keyboard controls:
 ```
